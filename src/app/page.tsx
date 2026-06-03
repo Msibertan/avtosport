@@ -311,7 +311,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">МЫ ИСКЛЮЧИЛИ ЭТИ РИСКИ</h3>
-                  <p className="text-gray-800 text-lg">Полная юридическая прозрачность и ответственность с 2018 года.</p>
+                  <p className="text-gray-800 text-lg">Полная юридическая прозрачность и ответственность с 2023 года.</p>
                 </div>
               </div>
               <Button onClick={() => setContactDialogOpen(true)} className="bg-white text-green-700 hover:bg-gray-100 px-8 py-6 text-lg font-bold rounded-xl whitespace-nowrap shadow-lg">
@@ -475,7 +475,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 p-3 rounded-xl bg-gray-100 border border-gray-200 hover:bg-gray-200 transition-colors cursor-default">
                     <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center shrink-0 border border-primary/50 text-primary">✓</div>
                     <p className="text-gray-700 text-sm mt-1.5">
-                      <strong className="text-gray-900 text-base">Более 11 лет опыта</strong> — 1000+ авто по всей РФ
+                      <strong className="text-gray-900 text-base">Более 3 лет опыта</strong> — 1000+ авто по всей РФ
                     </p>
                   </div>
                   <div className="flex items-start gap-4 p-3 rounded-xl bg-gray-100 border border-gray-200 hover:bg-gray-200 transition-colors cursor-default">
