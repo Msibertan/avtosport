@@ -56,6 +56,10 @@ export default function TeamPage() {
     {
       name: 'Роман',
       image: 'https://i.ibb.co/4Zhk2DwD/photo-2026-02-13-15-51-19.jpg'
+    },
+    {
+      name: 'Виктор',
+      image: '/team/victor.png'
     }
   ];
 
