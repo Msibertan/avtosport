@@ -10,6 +10,7 @@ import Link from 'next/link';
 export default function CatalogPage() {
   const [cars, setCars] = useState<Car[]>([]);
   const [loading, setLoading] = useState(true);
+  const [budgetFilter, setBudgetFilter] = useState('all');
 
   useEffect(() => {
     async function fetchCars() {
@@ -55,6 +56,31 @@ export default function CatalogPage() {
         </div>
       </section>
 
+      {/* Filters Section */}
+      <section className="bg-card px-8 py-6 border-b border-gray-100 z-20 relative">
+        <div className="max-w-screen-2xl mx-auto flex">
+          <div className="relative w-full md:w-80">
+            <select 
+              value={budgetFilter}
+              onChange={(e) => setBudgetFilter(e.target.value)}
+              className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none shadow-sm cursor-pointer hover:border-gray-300"
+            >
+              <option value="all">Все бюджеты</option>
+              <option value="up_to_500k">До 500 000 ₽</option>
+              <option value="500k_1m">500 000 - 1 000 000 ₽</option>
+              <option value="1m_2m">1 000 000 - 2 000 000 ₽</option>
+              <option value="2m_3m">2 000 000 - 3 000 000 ₽</option>
+              <option value="over_3m">Более 3 000 000 ₽</option>
+            </select>
+            <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+              <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Catalog Grid */}
       <section className="py-20 px-8 bg-card relative flex-grow">
         <div className="max-w-screen-2xl mx-auto relative z-10">
@@ -64,7 +90,15 @@ export default function CatalogPage() {
             </div>
           ) : cars.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {cars.map((car) => (
+              {cars.filter(car => {
+                if (budgetFilter === 'all') return true;
+                if (budgetFilter === 'up_to_500k') return car.price <= 500000;
+                if (budgetFilter === '500k_1m') return car.price > 500000 && car.price <= 1000000;
+                if (budgetFilter === '1m_2m') return car.price > 1000000 && car.price <= 2000000;
+                if (budgetFilter === '2m_3m') return car.price > 2000000 && car.price <= 3000000;
+                if (budgetFilter === 'over_3m') return car.price > 3000000;
+                return true;
+              }).map((car) => (
                 <div key={car.id} className="flex flex-col glass-panel border border-gray-200 rounded-3xl overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.1)] group">
                   {/* Car Image */}
                   <div className="h-56 overflow-hidden relative bg-gray-100">
