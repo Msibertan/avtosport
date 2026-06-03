@@ -353,7 +353,7 @@ export default function Home() {
                 </div>
                 <div className="relative h-64 md:h-full overflow-hidden">
                   <img
-                    src="https://images.pexels.com/photos/5668774/pexels-photo-5668774.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="/russian_businessman.png"
                     alt="Безопасность"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -410,7 +410,7 @@ export default function Home() {
                 </div>
                 <div className="relative h-64 md:h-full overflow-hidden">
                   <img
-                    src="https://images.pexels.com/photos/4489728/pexels-photo-4489728.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="/delivery_features.jpg"
                     alt="Доставка"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -425,7 +425,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 h-full gap-6">
                 <div className="relative h-64 md:h-full overflow-hidden order-2 md:order-1">
                   <img
-                    src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="/121212.jpg"
                     alt="Автомобиль премиум класса"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -519,7 +519,7 @@ export default function Home() {
               
               <div className="absolute inset-0 lg:relative h-full w-full z-[-1] lg:z-0 bg-background">
                 <img
-                  src="/image.png"
+                  src="/jpg_2654.jpg"
                   alt="Автоспорт"
                   className="w-full h-full object-cover lg:object-right object-center"
                 />
