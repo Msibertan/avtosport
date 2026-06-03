@@ -50,8 +50,8 @@ export default function TeamPage() {
       image: 'https://i.ibb.co/FkDmPZ27/photo-2026-02-13-15-51-44.jpg'
     },
     {
-      name: 'Виктор',
-      image: 'https://i.ibb.co/WvzNYTqS/photo-2026-02-13-15-51-15.jpg'
+      name: 'Кристина',
+      image: '/team/kristina.jpg'
     },
     {
       name: 'Роман',
