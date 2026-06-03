@@ -16,7 +16,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full flex justify-center ${scrolled ? 'bg-background/80 backdrop-blur-lg border-b border-gray-200 py-3 shadow-sm' : 'bg-transparent py-5'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full flex justify-center bg-background border-b border-gray-200 py-3 shadow-sm`}>
       <div className="w-full max-w-screen-2xl px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
@@ -29,7 +29,6 @@ export function Header() {
             { name: 'Главная', href: '/' },
             { name: 'Каталог', href: '/catalog' },
             { name: 'О нас', href: '/about' },
-            { name: 'Рассрочка', href: '/installment' },
             { name: 'Команда', href: '/team' },
             { name: 'Отзывы', href: '/reviews' }
           ].map((item) => (
