@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { Send, MessageCircle, Clock, MessageSquare, Mail } from 'lucide-react';
+import { Send, MessageCircle, Clock, MessageSquare, MapPin, Mail } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-gray-200 pt-16 pb-8 relative overflow-hidden mt-auto">
+    <footer className="bg-card border-t border-slate-200/60 pt-16 pb-8 relative overflow-hidden mt-auto">
       {/* Decorative Grid */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none" />
       
@@ -13,34 +13,30 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block group mb-6 hover:opacity-80 transition-opacity">
-              <img src="/logo.png" alt="Автоспорт" className="h-24 w-auto object-contain rounded-md" />
+              <img src="/logo.png" alt="Автоспорт" className="h-24 lg:h-32 w-auto object-contain" />
             </Link>
-            <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-sm">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-sm">
               Мы — ваш надёжный партнёр по покупке и доставке лучших автомобилей из Европы. Премиальный сервис без компромиссов.
             </p>
             <div className="flex items-center gap-4">
-              <a href="https://t.me/Avtosportprigon" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center border border-transparent hover:border-[#0088cc] hover:bg-[#0088cc]/10 hover:text-[#0088cc] text-gray-600 transition-all">
+              <a href="https://t.me/Avtosportprigon" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200/60 hover:border-[#0088cc] hover:bg-[#0088cc]/10 hover:text-[#0088cc] text-muted-foreground transition-all">
                 <Send className="w-4 h-4 ml-0.5" />
               </a>
-
+              <a href="https://wa.me/79016203603" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200/60 hover:border-[#0088cc] hover:bg-[#0088cc]/10 hover:text-[#0088cc] text-muted-foreground transition-all">
+                <MessageSquare className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
           {/* Navigation Column */}
           <div>
-            <h4 className="text-gray-900 font-bold mb-6 tracking-wide text-sm uppercase">Навигация</h4>
+            <h4 className="text-foreground font-bold mb-6 tracking-wide text-sm uppercase">Навигация</h4>
             <ul className="space-y-3">
-              {[
-                { name: 'Главная', href: '/' },
-                { name: 'О нас', href: '/about' },
-                { name: 'Рассрочка', href: '/installment' },
-                { name: 'Команда', href: '/team' },
-                { name: 'Отзывы', href: '/reviews' }
-              ].map((item) => (
-                <li key={item.name}>
-                  <Link href={item.href} className="text-gray-600 hover:text-primary text-sm transition-colors flex items-center gap-2 group">
+              {['Главная', 'О нас', 'Команда', 'Отзывы', 'Каталог'].map((item) => (
+                <li key={item}>
+                  <Link href={item === 'Главная' ? '/' : `/${item === 'О нас' ? 'about' : item === 'Команда' ? 'team' : item === 'Отзывы' ? 'reviews' : 'catalog'}`} className="text-muted-foreground hover:text-primary text-sm transition-colors flex items-center gap-2 group">
                     <span className="w-0 overflow-hidden group-hover:w-2 transition-all block h-[1px] bg-primary"></span>
-                    {item.name}
+                    {item}
                   </Link>
                 </li>
               ))}
@@ -48,43 +44,53 @@ export function Footer() {
           </div>
 
           {/* Contacts Column */}
-          <div>
-            <h4 className="text-gray-900 font-bold mb-6 tracking-wide text-sm uppercase">Контакты</h4>
+          <div className="lg:col-span-2">
+            <h4 className="text-foreground font-bold mb-6 tracking-wide text-sm uppercase">Контакты</h4>
             <ul className="space-y-4">
               <li>
                 <a href="tel:+74951856029" className="flex items-start gap-3 group">
-                  <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center border border-transparent group-hover:border-primary/50 transition-colors shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200/60 group-hover:border-primary/50 transition-colors shrink-0">
                     <MessageCircle className="w-3.5 h-3.5 text-primary" />
                   </div>
                   <div>
-                    <div className="text-gray-500 text-xs mb-0.5">Телефон</div>
-                    <div className="text-gray-700 group-hover:text-gray-900 text-sm font-medium transition-colors">+7(495)185-60-29</div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@avtosporteu.ru" className="flex items-start gap-3 group">
-                  <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center border border-transparent group-hover:border-primary/50 transition-colors shrink-0">
-                    <Mail className="w-3.5 h-3.5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-gray-500 text-xs mb-0.5">Email</div>
-                    <div className="text-gray-700 group-hover:text-gray-900 text-sm font-medium transition-colors">info@avtosporteu.ru</div>
+                    <div className="text-muted-foreground text-xs mb-0.5">Телефон (8-19 МСК)</div>
+                    <div className="text-muted-foreground group-hover:text-foreground text-sm font-medium transition-colors">+7(495)185-60-29</div>
                   </div>
                 </a>
               </li>
               <li>
                 <div className="flex items-start gap-3 group">
-                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center border border-transparent group-hover:border-primary/50 transition-colors shrink-0">
+                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200/60 group-hover:border-primary/50 transition-colors shrink-0">
                   <Clock className="w-3.5 h-3.5 text-primary" />
                 </div>
                 <div>
-                  <div className="text-gray-500 text-xs mb-0.5">Режим работы</div>
-                  <div className="text-gray-700 group-hover:text-gray-900 text-sm font-medium transition-colors">
-                    Будни: 8:00 - 18:00<br/>
-                    Сб: 9:00 - 13:00<br/>
-                    Вс: выходной
+                  <div className="text-muted-foreground text-xs mb-0.5">Режим работы</div>
+                  <div className="text-muted-foreground group-hover:text-foreground text-sm font-medium transition-colors">Ежедневно 8:00 - 19:00</div>
+                </div>
+              </div>
+            </li>
+            <li>
+                <div className="flex items-start gap-3 group">
+                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200/60 group-hover:border-primary/50 transition-colors shrink-0">
+                  <MapPin className="w-3.5 h-3.5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-muted-foreground text-xs mb-0.5">Адрес и реквизиты</div>
+                  <div className="text-muted-foreground group-hover:text-foreground text-sm font-medium transition-colors">
+                    610048, Кировская область, г Киров, Московская ул, д. 166а, этаж/помещ. 2/15<br />
+                    ООО "Автоспорт" • ИНН 4345524612 • ОГРН 1234300003410
                   </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="flex items-start gap-3 group">
+                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200/60 transition-colors shrink-0">
+                  <Mail className="w-3.5 h-3.5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-muted-foreground text-xs mb-0.5">Email</div>
+                  <div className="text-muted-foreground text-sm font-medium">—</div>
                 </div>
               </div>
             </li>
@@ -92,27 +98,17 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-200 pt-8">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-4 mb-6 text-gray-500 text-xs">
-          <div className="space-y-1">
-            <p className="font-medium text-gray-700">ООО "ВОЛГА-АВТО"</p>
-            <p>ИНН: 6324086400 | ОГРН: 1176313095672 | КПП: 632401001</p>
-            <p>Юридический адрес: 445015, Самарская область, г Тольятти, Шлюзовая ул, д. 2, кв. 24</p>
-            <p>Директор: Глазков Давид Афанасьевич</p>
-          </div>
-        </div>
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Автоспорт. Все права защищены.
-          </p>
-          <div className="flex flex-wrap items-center justify-center md:justify-end gap-6 text-sm">
-            <Link href="/privacy" className="text-gray-500 hover:text-gray-900 transition-colors">
-              Политика конфиденциальности
-            </Link>
-            <Link href="/terms" className="text-gray-500 hover:text-gray-900 transition-colors">
-              Пользовательское соглашение
-            </Link>
-          </div>
+      <div className="border-t border-slate-200/60 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-muted-foreground text-sm">
+          © {new Date().getFullYear()} ООО "Автоспорт". Все права защищены.
+        </p>
+        <div className="flex flex-wrap items-center justify-center md:justify-end gap-6 text-sm">
+          <Link href="/privacy" className="text-muted-foreground hover:text-muted-foreground transition-colors">
+            Политика конфиденциальности
+          </Link>
+          <Link href="/terms" className="text-muted-foreground hover:text-muted-foreground transition-colors">
+            Пользовательское соглашение
+          </Link>
         </div>
       </div>
     </div>
