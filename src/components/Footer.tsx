@@ -84,15 +84,15 @@ export function Footer() {
               </div>
             </li>
             <li>
-              <div className="flex items-start gap-3 group">
-                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200/60 transition-colors shrink-0">
+              <a href="mailto:autosport.groups@rambler.ru" className="flex items-start gap-3 group">
+                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center border border-slate-200/60 group-hover:border-primary/50 transition-colors shrink-0">
                   <Mail className="w-3.5 h-3.5 text-primary" />
                 </div>
                 <div>
                   <div className="text-muted-foreground text-xs mb-0.5">Email</div>
-                  <div className="text-muted-foreground text-sm font-medium">—</div>
+                  <div className="text-muted-foreground group-hover:text-foreground text-sm font-medium transition-colors">autosport.groups@rambler.ru</div>
                 </div>
-              </div>
+              </a>
             </li>
           </ul>
         </div>
